@@ -209,10 +209,6 @@ These vectors are combined (for simplicity, let's assume concatenation is used):
 Final vector "The": [0.64, 0.48, 1.56, 0.24, 1.00, 0.50, 0.75, 0.25, 0.30, 0.70, 1.00, 0.90]
 ```
 
-### Using the Final Vectors in the Model
+### 6. Using the Final Vectors in the Model
 The combined final vector is fed into subsequent layers of the model (such as FFN layers) for further processing, ultimately producing the model's final output. This final output can be used for next-word prediction, classification, or any other task for which the model is trained.
 
-### 6. Using the Final Vectors in the Model
-After the multi-head attention stage, the output vectors are processed and then passed through the subsequent layers of the transformer
-
- to reach the final model output. This final output can be used for tasks like next-word prediction, classification, or any other task the model is trained for.
