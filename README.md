@@ -60,60 +60,11 @@ Mat  -> [1, 0, 1, 0]
 To preserve the information about the order of the words in the sentence, positional embeddings are added to the word embeddings. Let's assume the positional embeddings for the words are as follows:
 Here is the English translation of the provided Persian text:
 
-For each position \( \text{pos} \) and dimension \( i \):
+For each position pos and dimension i:
+![Capture](https://github.com/Mahsa33/GPT2/assets/53941450/dba83f3c-6531-4d38-8d0e-d69d2dc38b1b)
+![Capture2](https://github.com/Mahsa33/GPT2/assets/53941450/4de3d842-3469-43a9-a389-ffce222c495d)
 
-\[ PE(\text{pos}, 2i) = \sin\left(\frac{\text{pos}}{10000^{(2i / d_{\text{model}})}}\right) \]
-\[ PE(\text{pos}, 2i + 1) = \cos\left(\frac{\text{pos}}{10000^{(2i / d_{\text{model}})}}\right) \]
 
-Where:
-
-- \( \text{pos} \) is the position of the word in the sequence.
-- \( i \) is the index of the dimension in the embedding vector.
-- \( d_{\text{model}} \) is the length of the embedding vector.
-
-Positional Embedding Calculation
-For example, assume a sequence length of 4 words and an embedding vector length of 4:
-
-Position 0 (word "The"):
-\[ PE(0, 0) = \sin\left(\frac{0}{10000^{(0 / 4)}}\right) = \sin(0) = 0 \]
-\[ PE(0, 1) = \cos\left(\frac{0}{10000^{(0 / 4)}}\right) = \cos(0) = 1 \]
-\[ PE(0, 2) = \sin\left(\frac{0}{10000^{(2 / 4)}}\right) = \sin(0) = 0 \]
-\[ PE(0, 3) = \cos\left(\frac{0}{10000^{(2 / 4)}}\right) = \cos(0) = 1 \]
-
-Therefore, the positional embedding for the word "The" is:
-\[ [0, 1, 0, 1] \]
-
-Position 1 (word "Cat"):
-\[ PE(1, 0) = \sin\left(\frac{1}{10000^{(0 / 4)}}\right) \approx 0.841 \]
-\[ PE(1, 1) = \cos\left(\frac{1}{10000^{(0 / 4)}}\right) \approx 0.540 \]
-\[ PE(1, 2) = \sin\left(\frac{1}{10000^{(2 / 4)}}\right) \approx 0.001 \]
-\[ PE(1, 3) = \cos\left(\frac{1}{10000^{(2 / 4)}}\right) \approx 0.999 \]
-
-Therefore, the positional embedding for the word "Cat" is:
-\[ [0.841, 0.540, 0.001, 0.999] \]
-
-Position 2 (word "Sat"):
-\[ PE(2, 0) = \sin\left(\frac{2}{10000^{(0 / 4)}}\right) \approx 0.909 \]
-\[ PE(2, 1) = \cos\left(\frac{2}{10000^{(0 / 4)}}\right) \approx -0.416 \]
-\[ PE(2, 2) = \sin\left(\frac{2}{10000^{(2 / 4)}}\right) \approx 0.002 \]
-\[ PE(2, 3) = \cos\left(\frac{2}{10000^{(2 / 4)}}\right) \approx 0.998 \]
-
-Therefore, the positional embedding for the word "Sat" is:
-\[ [0.909, -0.416, 0.002, 0.998] \]
-
-Position 3 (word "Mat"):
-\[ PE(3, 0) = \sin\left(\frac{3}{10000^{(0 / 4)}}\right) \approx 0.141 \]
-\[ PE(3, 1) = \cos\left(\frac{3}{10000^{(0 / 4)}}\right) \approx -0.990 \]
-\[ PE(3, 2) = \sin\left(\frac{3}{10000^{(2 / 4)}}\right) \approx 0.003 \]
-\[ PE(3, 3) = \cos\left(\frac{3}{10000^{(2 / 4)}}\right) \approx 0.997 \]
-
-Therefore, the positional embedding for the word "Mat" is:
-\[ [0.141, -0.990, 0.003, 0.997] \]
-```
-Position 0 (The) -> [0, 1, 0, 1]
-Position 1 (Cat) -> [0.841, 0.540, 0.001, 0.999]
-Position 2 (Sat) -> [0.909, -0.416, 0.002, 0.998]
-Position 3 (Mat) -> [0.141, -0.990, 0.003, 0.997]
 ```
 
 ### 3. Combining Word and Positional Embeddings
