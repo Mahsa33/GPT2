@@ -61,11 +61,13 @@ To preserve the information about the order of the words in the sentence, positi
 Here is the English translation of the provided Persian text:
 
 For each position pos and dimension i:
+
 ![Capture](https://github.com/Mahsa33/GPT2/assets/53941450/dba83f3c-6531-4d38-8d0e-d69d2dc38b1b)
+
 ![Capture2](https://github.com/Mahsa33/GPT2/assets/53941450/4de3d842-3469-43a9-a389-ffce222c495d)
 
 
-```
+
 
 ### 3. Combining Word and Positional Embeddings
 The word embeddings and positional embeddings are added together to form the final vectors, which contain both semantic and positional information:
