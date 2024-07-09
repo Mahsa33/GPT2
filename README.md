@@ -4,6 +4,9 @@
 
 The Transformer architecture has revolutionized text generation, forming the foundation for GPT (Generative Pre-trained Transformer) models. Its applications extend beyond language tasks, with uses in image classification, generation, and even protein folding! Let's delve into the three key components of a Transformer and how they work together in GPT models.
 
+![Capture](https://github.com/Mahsa33/GPT2/assets/53941450/c77015a1-afa1-4544-bf3e-3227fe80a471)
+
+
 # 1. Embeddings: Bridging the Gap Between Text and Numbers
 
 Imagine feeding raw text into a Transformer – it wouldn't understand! Computers thrive on numbers, so we first convert text into a sequence of numbers through tokenization. This process breaks down text into smaller units called tokens, which can be words, parts of words, or even named entity chunks. Each token receives a unique number, making it easier for the Transformer to process.
@@ -211,4 +214,6 @@ Final vector "The": [0.64, 0.48, 1.56, 0.24, 1.00, 0.50, 0.75, 0.25, 0.30, 0.70,
 
 ### 6. Using the Final Vectors in the Model
 The combined final vector is fed into subsequent layers of the model (such as FFN layers) for further processing, ultimately producing the model's final output. This final output can be used for next-word prediction, classification, or any other task for which the model is trained.
+
+reference : https://bea.stollnitz.com/blog/gpt-transformer/
 
